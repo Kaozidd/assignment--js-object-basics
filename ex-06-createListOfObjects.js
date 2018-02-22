@@ -12,7 +12,7 @@
  * createListOfObjects(namesList)
  *  =>
  *  [
- *     { firstName: 'Camer', lastName: 'Betts'},
+ *     { firstName: 'Cameron', lastName: 'Betts'},
  *     { firstName: 'Shana', lastName: 'Lopez'},
  *     { firstName: 'Angela', lastName: 'Li'}
  *  ]
@@ -20,8 +20,17 @@
  * HINT: You might be able to reuse some of the logic from createNameObject()
 */
 
-
-
+function createListOfObjects(array) {
+  const resArray = [];
+  for (let i=0; i<array.length; i++) {
+    let obj = {};
+    let tempArray = array[i].split(" ");
+    obj.firstName = tempArray[0];
+    obj.lastName = tempArray[1];
+    resArray.push(obj);
+  }
+  return resArray;
+}
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
@@ -49,7 +58,7 @@ var ninjaListOfObjects = createListOfObjects(realNinjas)
 console.assert(typeof ninjaListOfObjects[0] === "object")
 console.assert(ninjaListOfObjects[0].firstName === "Chuck")
 console.assert(ninjaListOfObjects[0].lastName === "Norris")
-console.assert(ninjaListOfObjects[1].firstName === "Jacky")
+console.assert(ninjaListOfObjects[1].firstName === "Jackie")
 console.assert(ninjaListOfObjects[1].lastName === "Chan")
 console.assert(ninjaListOfObjects[3].firstName === "Billy")
 console.assert(ninjaListOfObjects[3].lastName === "Blanks")

@@ -8,7 +8,17 @@
  *
 **/
 
-
+function getFullNames(array) {
+	const resArray = [];
+	for (let i=0; i<array.length; i++) {
+		if (array[i].gender === "male") {
+			resArray.push(`Mr. ${array[i].first} ${array[i].last}`)
+		} else {
+			resArray.push(`Ms. ${array[i].first} ${array[i].last}`)			
+		}
+	}
+	return resArray;
+}
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
@@ -33,5 +43,5 @@ console.assert(fullNamesList1[1] === "Ms. Kate Smith")
 //-------------------------------
 var moreNamesList = getFullNames(moreCustomersList)
 console.assert(typeof moreNamesList[1] === "string")
-console.assert(moreNamesList[1] === "Ms. Ruby Scooby")
+console.assert(moreNamesList[0] === "Ms. Ruby Scooby")
 console.assert(moreNamesList[2] === "Mr. Dan Theman")

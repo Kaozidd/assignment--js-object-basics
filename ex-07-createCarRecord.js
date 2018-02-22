@@ -18,13 +18,53 @@
  *  ( see GROUP2 - GROUP4 console.assert() )
 **/
 
+function createCarRecord(makeP, modelP, yearP, licenseP) {
+	let err1 = 'new record must have make, model, year, and license values';
+	let err2 = '1st, 2nd, and 4th arguments must be String';
+	let err3 = '3rd argument must be a Number';
+	const resObj = {};
+	if (typeof makeP === "string") {
+		resObj.make = makeP;
+	} else if (typeof makeP === "undefined") {
+		return err1;
+	} else if (typeof makeP === "number") {
+		return err2;
+	} else if (typeof makeP === "boolean") {
+		return err2;
+	}
 
+	if (typeof modelP === "string") {
+		resObj.model = modelP;
+	} else if (typeof modelP === "undefined") {
+		return err1;
+	} else if (typeof modelP === "number") {
+		return err2;
+	} else if (typeof modelP === "boolean") {
+		return err2;
+	}
 
+	if (typeof yearP === "number") {
+		resObj.year = yearP;
+	} else if (typeof yearP === "undefined") {
+		return err1;
+	} else if (typeof yearP === "string") {
+		return err3;
+	} else if (typeof yearP === "boolean") {
+		return err3;
+	}
 
-
-
-
-
+	if (typeof licenseP === "string") {
+		resObj.license = licenseP;
+	} else if (typeof licenseP === "undefined") {
+		return err1;
+	} else if (typeof licenseP === "number") {
+		return err2;
+	} else if (typeof licenseP === "boolean") {
+		return err2;
+	}
+	
+	return resObj;	
+}
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 

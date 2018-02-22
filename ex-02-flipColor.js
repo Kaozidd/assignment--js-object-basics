@@ -8,10 +8,15 @@
  * vice-versa.
 */
 
-
-
-
-
+function flipColor(obj) {
+	const newObj = obj;
+	if (obj.color === "blue") {
+		newObj.color = "red";
+	} else if (obj.color === "red") {
+		newObj.color = "blue";
+	}
+	return newObj;
+}
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
